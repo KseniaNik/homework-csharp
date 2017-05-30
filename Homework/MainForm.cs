@@ -26,8 +26,8 @@ namespace Homework
         private Control OFFS_COMP;
 
         private ExportedDatabase exDB;
-        
-        public InnerDatabase innerDB {get;}
+
+        public InnerDatabase innerDB { get; set; }
 
         public MainForm()
         {
@@ -46,6 +46,7 @@ namespace Homework
             if (openDB.ShowDialog().Equals(DialogResult.OK))
             {
                 exDB = deserialize(openDB.FileName);
+                innerDB = new InnerDatabase(exDB);
             }
             // now the db is exported, we can do what we want
         }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Homework
 {
-    class InnerDatabase
+    public class InnerDatabase
     {
 
         public InnerDatabase(ExportedDatabase database)

@@ -45,6 +45,7 @@
             this.saveButton = new System.Windows.Forms.Button();
             this.deleteButton = new System.Windows.Forms.Button();
             this.errorLabel = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -187,10 +188,20 @@
             this.errorLabel.Size = new System.Drawing.Size(406, 23);
             this.errorLabel.TabIndex = 17;
             // 
-            // EmployeeRedactor
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(169, 319);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 18;
+            this.button1.Text = "Добавить";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // EmployeeEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.errorLabel);
             this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.saveButton);
@@ -208,7 +219,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "EmployeeRedactor";
+            this.Name = "EmployeeEditor";
             this.Size = new System.Drawing.Size(412, 346);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -234,5 +245,6 @@
         private System.Windows.Forms.Button saveButton;
         private System.Windows.Forms.Button deleteButton;
         private System.Windows.Forms.Label errorLabel;
+        private System.Windows.Forms.Button button1;
     }
 }
