@@ -1,0 +1,1 @@
+"C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\xsd.exe" schema1.xsd /classes /o:Model.cs
