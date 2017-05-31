@@ -25,7 +25,7 @@ namespace Homework
         private ServiceEditor SRVS_COMP;
         private OfficeEditor OFFS_COMP;
 
-        private ExportedDatabase exDB;
+      
 
         public InnerDatabase db { get; set; }
 
@@ -45,8 +45,7 @@ namespace Homework
         {
             if (openDB.ShowDialog().Equals(DialogResult.OK))
             {
-                exDB = deserialize(openDB.FileName);
-                db = new InnerDatabase(exDB);
+                db = new InnerDatabase(deserialize(openDB.FileName));
             }
             comboBox1.SelectedIndex = 0;
             comboBox1.Enabled = true;
@@ -200,6 +199,15 @@ namespace Homework
             if (saveFileDialog1.ShowDialog().Equals(DialogResult.OK)) {
                 serialize(saveFileDialog1.FileName);
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.db = new InnerDatabase();
+
+            comboBox1.SelectedIndex = 0;
+            comboBox1.Enabled = true;
+            refreshEntities(db);
         }
     }
 }

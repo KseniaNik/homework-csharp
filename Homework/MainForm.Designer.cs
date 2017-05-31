@@ -36,6 +36,7 @@
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.saveDB = new System.Windows.Forms.Button();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // comboBox1
@@ -94,11 +95,22 @@
             this.saveDB.UseVisualStyleBackColor = true;
             this.saveDB.Click += new System.EventHandler(this.saveDB_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(196, 10);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(91, 23);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "New database";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(880, 535);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.saveDB);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.richTextBox1);
@@ -121,6 +133,7 @@
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Button saveDB;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.Button button1;
     }
 }
 

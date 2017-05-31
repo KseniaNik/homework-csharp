@@ -11,6 +11,15 @@ namespace Homework
 
         private ExportedDatabase exportedInitial;
 
+        public InnerDatabase()
+        {
+            exportedInitial = null;
+            Offices = new List<Office>();
+            Employees = new List<Employee>();
+            Orders = new List<Order>();
+            Services = new List<Service>();
+        }
+
         public InnerDatabase(ExportedDatabase database)
         {
             exportedInitial = database;

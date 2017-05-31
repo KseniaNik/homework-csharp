@@ -35,8 +35,15 @@ namespace Homework
             serviceBox.Items.AddRange(db.Services.ToArray());
             officeBox.Items.Clear();
             officeBox.Items.AddRange(db.Offices.ToArray());
-            articles = db.Orders[idx].articleList.ToList();
-            articlesList.Items.AddRange(db.Orders[idx].articleList);
+            if (db.Orders != null && db.Orders.Count > 0)
+            {
+                articles = db.Orders[idx].articleList.ToList();
+                articlesList.Items.AddRange(db.Orders[idx].articleList);
+            }
+            else
+            {
+                articles = new List<Article>();
+            }
         }
 
         public void setCurrent(int idx)
@@ -133,12 +140,19 @@ namespace Homework
             articleColor.Text = articles[idx].color + "";
         }
 
+        private Color baseArName;
+
         private void addArticle_Click(object sender, EventArgs e)
         {
             if (articleName.Text == "")
             {
+                if (baseArName == null) {
+                    baseArName = articleName.BackColor;
+                }
+                articleName.BackColor = Color.Red;
                 return;
             }
+            articleName.BackColor = baseArName;
             if (articles == null)
             {
                 articles = new List<Article>();
