@@ -35,6 +35,8 @@ namespace Homework
             serviceBox.Items.AddRange(db.Services.ToArray());
             officeBox.Items.Clear();
             officeBox.Items.AddRange(db.Offices.ToArray());
+            articles = db.Orders[idx].articleList.ToList();
+            articlesList.Items.AddRange(db.Orders[idx].articleList);
         }
 
         public void setCurrent(int idx)
@@ -68,6 +70,11 @@ namespace Homework
                 articles = order.articleList.ToList();
                 articlesList.Items.Clear();
                 articlesList.Items.AddRange(order.articleList);
+            }
+            else
+            {
+                order.articleList = new Article[0];
+                articles = new List<Article>();
             }
         }
 
@@ -117,6 +124,10 @@ namespace Homework
 
         private void setCurrentArticle(int idx)
         {
+            if (idx > articles.Count - 1)
+            {
+                return;
+            }
             articleName.Text = articles[idx].name;
             articleComponents.Text = articles[idx].components;
             articleColor.Text = articles[idx].color + "";
@@ -124,6 +135,10 @@ namespace Homework
 
         private void addArticle_Click(object sender, EventArgs e)
         {
+            if (articleName.Text == "")
+            {
+                return;
+            }
             if (articles == null)
             {
                 articles = new List<Article>();
@@ -145,14 +160,7 @@ namespace Homework
                 return;
             }
 
-            int idx = articlesList.SelectedIndex;
-
-            if (idx < 0)
-            {
-                return;
-            }
-
-            articles[idx].name = name.Text;
+            articles[idx].name = articleName.Text;
             articles[idx].components = this.articleComponents.Text;
             articles[idx].color = col;
         }
@@ -166,15 +174,30 @@ namespace Homework
                 return;
             }
             int idx = articlesList.SelectedIndex;
+            if (idx < 0)
+            {
+                MessageBox.Show("Выберите предмет для удаления");
+                return;
+            }
+
             articles.RemoveAt(idx);
             refreshArticles();
-            setCurrent(idx + 1 < db.Orders.Count ? idx + 1 : idx - 1);
+            setCurrentArticle(idx + 1 < db.Orders.Count ? idx + 1 : idx - 1);
         }
 
         private void refreshArticles()
         {
             articlesList.Items.Clear();
             articlesList.Items.AddRange(articles.ToArray());
+        }
+
+        private void articlesList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int idx = articlesList.SelectedIndex;
+            if (idx < 0) {
+                return;
+            }
+            setCurrentArticle(idx);
         }
     }
 }

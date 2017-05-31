@@ -53,6 +53,11 @@ namespace Homework
 
         private void save_Click(object sender, EventArgs e)
         {
+            if (db.Services.Count - 1 < idx)
+            {
+                MessageBox.Show("Используй добавить");
+                return;
+            }
             doSave();
         }
 

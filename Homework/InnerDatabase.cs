@@ -75,7 +75,7 @@ namespace Homework
             bool clean = true;
             foreach (var order in Orders)
             {
-                if (order.office.id == idToRemove)
+                if (order.office != null && order.office.id == idToRemove)
                 {
                     order.office = null;
                     clean = false;
@@ -108,7 +108,7 @@ namespace Homework
             bool clean = true;
             foreach (var order in Orders)
             {
-                if (order.employee.id == idToRemove)
+                if (order.employee != null && order.employee.id == idToRemove)
                 {
                     order.employee = null;
                     clean = false;
@@ -149,7 +149,7 @@ namespace Homework
             bool clean = true;
             foreach (var order in Orders)
             {
-                if (order.service.id == idToRemove)
+                if (order.service != null && order.service.id == idToRemove)
                 {
                     order.service = null;
                     clean = false;

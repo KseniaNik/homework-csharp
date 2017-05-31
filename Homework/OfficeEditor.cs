@@ -40,6 +40,11 @@ namespace Homework
 
         private void save_Click(object sender, EventArgs e)
         {
+            if (db.Offices.Count - 1 < idx)
+            {
+                MessageBox.Show("Используй добавить");
+                return;
+            }
             db.saveOffice(idx, name.Text, address.Text);
         }
 

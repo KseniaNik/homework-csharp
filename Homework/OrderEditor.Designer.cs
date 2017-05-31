@@ -194,6 +194,7 @@
             this.articlesList.Name = "articlesList";
             this.articlesList.Size = new System.Drawing.Size(120, 95);
             this.articlesList.TabIndex = 18;
+            this.articlesList.SelectedIndexChanged += new System.EventHandler(this.articlesList_SelectedIndexChanged);
             // 
             // addArticle
             // 
