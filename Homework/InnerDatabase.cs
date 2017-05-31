@@ -202,15 +202,15 @@ namespace Homework
             ord.idSpecified = true;
             ord.orderDateSpecified = true;
             ord.orderDate = orderDate;
-            if (officeIdx > 0)
+            if (officeIdx >= 0)
             {
                 ord.office = Offices[officeIdx];
             }
-            if (employeeIdx > 0)
+            if (employeeIdx >= 0)
             {
                 ord.employee = Employees[employeeIdx];
             }
-            if (serviceIdx > 0)
+            if (serviceIdx >= 0)
             {
                 ord.service = Services[serviceIdx];
             }

@@ -63,7 +63,16 @@ namespace Homework
             ExportedDatabase result;
             using (XmlReader reader = XmlReader.Create(filename))
             {
-                result = (ExportedDatabase)serializer.Deserialize(reader);
+                try
+                {
+                    result = (ExportedDatabase)serializer.Deserialize(reader);
+                }
+                catch
+                {
+                    richTextBox1.BackColor = Color.Red;
+                    richTextBox1.Text = "Ошибка импорта!";
+                    return null;
+                }
             }
             richTextBox1.BackColor = Color.LightGreen;
             richTextBox1.Text = "База данных импортирована успешно!";
