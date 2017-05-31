@@ -65,6 +65,12 @@ namespace Homework
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (exDB == null)
+            {
+                richTextBox1.ForeColor = Color.Red;
+                richTextBox1.Text = "DB not loaded!";
+                return;
+            }
             string selected = (string)comboBox1.SelectedItem;
             panel1.Controls.Clear();
             listBox1.Items.Clear();
