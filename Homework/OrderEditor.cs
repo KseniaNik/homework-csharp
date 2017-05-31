@@ -124,7 +124,7 @@ namespace Homework
 
         private void setCurrentArticle(int idx)
         {
-            if (idx > articles.Count - 1)
+            if (idx < 0 || idx > articles.Count - 1)
             {
                 return;
             }
