@@ -34,11 +34,14 @@
             this.openFile = new System.Windows.Forms.Button();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.listBox1 = new System.Windows.Forms.ListBox();
+            this.saveDB = new System.Windows.Forms.Button();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.SuspendLayout();
             // 
             // comboBox1
             // 
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.Enabled = false;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(12, 40);
             this.comboBox1.Name = "comboBox1";
@@ -68,7 +71,7 @@
             this.richTextBox1.Location = new System.Drawing.Point(12, 491);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.Size = new System.Drawing.Size(648, 42);
+            this.richTextBox1.Size = new System.Drawing.Size(856, 42);
             this.richTextBox1.TabIndex = 4;
             this.richTextBox1.Text = "";
             // 
@@ -79,12 +82,24 @@
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(275, 420);
             this.listBox1.TabIndex = 5;
+            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+            // 
+            // saveDB
+            // 
+            this.saveDB.Location = new System.Drawing.Point(103, 11);
+            this.saveDB.Name = "saveDB";
+            this.saveDB.Size = new System.Drawing.Size(75, 23);
+            this.saveDB.TabIndex = 6;
+            this.saveDB.Text = "Save...";
+            this.saveDB.UseVisualStyleBackColor = true;
+            this.saveDB.Click += new System.EventHandler(this.saveDB_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(880, 535);
+            this.Controls.Add(this.saveDB);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.openFile);
@@ -104,6 +119,8 @@
         private System.Windows.Forms.Button openFile;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.Button saveDB;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }
 

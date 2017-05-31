@@ -28,73 +28,66 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.name = new System.Windows.Forms.TextBox();
+            this.last = new System.Windows.Forms.TextBox();
+            this.patr = new System.Windows.Forms.TextBox();
+            this.phone = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.isExecutedCheckBox = new System.Windows.Forms.CheckBox();
+            this.orderDate = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.articlesList = new System.Windows.Forms.ListBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.addArticle = new System.Windows.Forms.Button();
+            this.saveArticle = new System.Windows.Forms.Button();
+            this.deleteArticle = new System.Windows.Forms.Button();
+            this.articleName = new System.Windows.Forms.TextBox();
+            this.articleColor = new System.Windows.Forms.TextBox();
+            this.articleComponents = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.save = new System.Windows.Forms.Button();
+            this.add = new System.Windows.Forms.Button();
+            this.delete = new System.Windows.Forms.Button();
+            this.employeeBox = new System.Windows.Forms.ComboBox();
+            this.officeBox = new System.Windows.Forms.ComboBox();
+            this.serviceBox = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
-            // textBox1
+            // name
             // 
-            this.textBox1.Location = new System.Drawing.Point(226, 20);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(273, 20);
-            this.textBox1.TabIndex = 0;
+            this.name.Location = new System.Drawing.Point(226, 20);
+            this.name.Name = "name";
+            this.name.Size = new System.Drawing.Size(273, 20);
+            this.name.TabIndex = 0;
             // 
-            // textBox2
+            // last
             // 
-            this.textBox2.Location = new System.Drawing.Point(226, 46);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(273, 20);
-            this.textBox2.TabIndex = 1;
+            this.last.Location = new System.Drawing.Point(226, 46);
+            this.last.Name = "last";
+            this.last.Size = new System.Drawing.Size(273, 20);
+            this.last.TabIndex = 1;
             // 
-            // textBox3
+            // patr
             // 
-            this.textBox3.Location = new System.Drawing.Point(226, 74);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(273, 20);
-            this.textBox3.TabIndex = 2;
+            this.patr.Location = new System.Drawing.Point(226, 74);
+            this.patr.Name = "patr";
+            this.patr.Size = new System.Drawing.Size(273, 20);
+            this.patr.TabIndex = 2;
             // 
-            // textBox4
+            // phone
             // 
-            this.textBox4.Location = new System.Drawing.Point(226, 100);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(273, 20);
-            this.textBox4.TabIndex = 3;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(226, 199);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(273, 20);
-            this.textBox5.TabIndex = 4;
+            this.phone.Location = new System.Drawing.Point(226, 100);
+            this.phone.Name = "phone";
+            this.phone.Size = new System.Drawing.Size(273, 20);
+            this.phone.TabIndex = 3;
             // 
             // label1
             // 
@@ -137,27 +130,26 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(46, 202);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(74, 13);
+            this.label5.Size = new System.Drawing.Size(55, 13);
             this.label5.TabIndex = 9;
-            this.label5.Text = "ID работника";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
+            this.label5.Text = "Работник";
             // 
-            // checkBox1
+            // isExecutedCheckBox
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(201, 133);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(116, 17);
-            this.checkBox1.TabIndex = 10;
-            this.checkBox1.Text = "Заказ выполнен?";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.isExecutedCheckBox.AutoSize = true;
+            this.isExecutedCheckBox.Location = new System.Drawing.Point(201, 133);
+            this.isExecutedCheckBox.Name = "isExecutedCheckBox";
+            this.isExecutedCheckBox.Size = new System.Drawing.Size(116, 17);
+            this.isExecutedCheckBox.TabIndex = 10;
+            this.isExecutedCheckBox.Text = "Заказ выполнен?";
+            this.isExecutedCheckBox.UseVisualStyleBackColor = true;
             // 
-            // dateTimePicker1
+            // orderDate
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(226, 157);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(273, 20);
-            this.dateTimePicker1.TabIndex = 11;
+            this.orderDate.Location = new System.Drawing.Point(226, 157);
+            this.orderDate.Name = "orderDate";
+            this.orderDate.Size = new System.Drawing.Size(273, 20);
+            this.orderDate.TabIndex = 11;
             // 
             // label6
             // 
@@ -168,37 +160,23 @@
             this.label6.TabIndex = 12;
             this.label6.Text = "Дата заказа";
             // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(226, 226);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(273, 20);
-            this.textBox6.TabIndex = 13;
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(48, 229);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(53, 13);
+            this.label7.Size = new System.Drawing.Size(35, 13);
             this.label7.TabIndex = 14;
-            this.label7.Text = "ID офиса";
+            this.label7.Text = "Офис";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(48, 254);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(54, 13);
+            this.label8.Size = new System.Drawing.Size(43, 13);
             this.label8.TabIndex = 15;
-            this.label8.Text = "ID услуги";
-            // 
-            // textBox7
-            // 
-            this.textBox7.Location = new System.Drawing.Point(226, 253);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(273, 20);
-            this.textBox7.TabIndex = 16;
+            this.label8.Text = "Услуга";
             // 
             // label9
             // 
@@ -217,53 +195,56 @@
             this.articlesList.Size = new System.Drawing.Size(120, 95);
             this.articlesList.TabIndex = 18;
             // 
-            // button1
+            // addArticle
             // 
-            this.button1.Location = new System.Drawing.Point(151, 305);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 19;
-            this.button1.Text = "Добавить";
-            this.button1.UseVisualStyleBackColor = true;
+            this.addArticle.Location = new System.Drawing.Point(151, 305);
+            this.addArticle.Name = "addArticle";
+            this.addArticle.Size = new System.Drawing.Size(75, 23);
+            this.addArticle.TabIndex = 19;
+            this.addArticle.Text = "Добавить";
+            this.addArticle.UseVisualStyleBackColor = true;
+            this.addArticle.Click += new System.EventHandler(this.addArticle_Click);
             // 
-            // button2
+            // saveArticle
             // 
-            this.button2.Location = new System.Drawing.Point(151, 334);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 20;
-            this.button2.Text = "Сохранить";
-            this.button2.UseVisualStyleBackColor = true;
+            this.saveArticle.Location = new System.Drawing.Point(151, 334);
+            this.saveArticle.Name = "saveArticle";
+            this.saveArticle.Size = new System.Drawing.Size(75, 23);
+            this.saveArticle.TabIndex = 20;
+            this.saveArticle.Text = "Сохранить";
+            this.saveArticle.UseVisualStyleBackColor = true;
+            this.saveArticle.Click += new System.EventHandler(this.saveArticle_Click);
             // 
-            // button3
+            // deleteArticle
             // 
-            this.button3.Location = new System.Drawing.Point(151, 363);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 21;
-            this.button3.Text = "Удалить";
-            this.button3.UseVisualStyleBackColor = true;
+            this.deleteArticle.Location = new System.Drawing.Point(151, 363);
+            this.deleteArticle.Name = "deleteArticle";
+            this.deleteArticle.Size = new System.Drawing.Size(75, 23);
+            this.deleteArticle.TabIndex = 21;
+            this.deleteArticle.Text = "Удалить";
+            this.deleteArticle.UseVisualStyleBackColor = true;
+            this.deleteArticle.Click += new System.EventHandler(this.deleteArticle_Click);
             // 
-            // textBox8
+            // articleName
             // 
-            this.textBox8.Location = new System.Drawing.Point(349, 301);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(150, 20);
-            this.textBox8.TabIndex = 22;
+            this.articleName.Location = new System.Drawing.Point(349, 301);
+            this.articleName.Name = "articleName";
+            this.articleName.Size = new System.Drawing.Size(150, 20);
+            this.articleName.TabIndex = 22;
             // 
-            // textBox9
+            // articleColor
             // 
-            this.textBox9.Location = new System.Drawing.Point(349, 331);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(150, 20);
-            this.textBox9.TabIndex = 23;
+            this.articleColor.Location = new System.Drawing.Point(349, 331);
+            this.articleColor.Name = "articleColor";
+            this.articleColor.Size = new System.Drawing.Size(150, 20);
+            this.articleColor.TabIndex = 23;
             // 
-            // textBox10
+            // articleComponents
             // 
-            this.textBox10.Location = new System.Drawing.Point(349, 358);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(150, 20);
-            this.textBox10.TabIndex = 24;
+            this.articleComponents.Location = new System.Drawing.Point(349, 358);
+            this.articleComponents.Name = "articleComponents";
+            this.articleComponents.Size = new System.Drawing.Size(150, 20);
+            this.articleComponents.TabIndex = 24;
             // 
             // label10
             // 
@@ -292,70 +273,99 @@
             this.label12.TabIndex = 27;
             this.label12.Text = "Компоненты";
             // 
-            // button4
+            // save
             // 
-            this.button4.Location = new System.Drawing.Point(3, 416);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 28;
-            this.button4.Text = "Сохранить";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.save.Location = new System.Drawing.Point(3, 416);
+            this.save.Name = "save";
+            this.save.Size = new System.Drawing.Size(75, 23);
+            this.save.TabIndex = 28;
+            this.save.Text = "Сохранить";
+            this.save.UseVisualStyleBackColor = true;
+            this.save.Click += new System.EventHandler(this.save_Click);
             // 
-            // button5
+            // add
             // 
-            this.button5.Location = new System.Drawing.Point(201, 416);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 29;
-            this.button5.Text = "Добавить";
-            this.button5.UseVisualStyleBackColor = true;
+            this.add.Location = new System.Drawing.Point(201, 416);
+            this.add.Name = "add";
+            this.add.Size = new System.Drawing.Size(75, 23);
+            this.add.TabIndex = 29;
+            this.add.Text = "Добавить";
+            this.add.UseVisualStyleBackColor = true;
+            this.add.Click += new System.EventHandler(this.add_Click);
             // 
-            // button6
+            // delete
             // 
-            this.button6.Location = new System.Drawing.Point(424, 416);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
-            this.button6.TabIndex = 30;
-            this.button6.Text = "Удалить";
-            this.button6.UseVisualStyleBackColor = true;
+            this.delete.Location = new System.Drawing.Point(424, 416);
+            this.delete.Name = "delete";
+            this.delete.Size = new System.Drawing.Size(75, 23);
+            this.delete.TabIndex = 30;
+            this.delete.Text = "Удалить";
+            this.delete.UseVisualStyleBackColor = true;
+            this.delete.Click += new System.EventHandler(this.delete_Click);
+            // 
+            // employeeBox
+            // 
+            this.employeeBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.employeeBox.FormattingEnabled = true;
+            this.employeeBox.Location = new System.Drawing.Point(226, 193);
+            this.employeeBox.Name = "employeeBox";
+            this.employeeBox.Size = new System.Drawing.Size(273, 21);
+            this.employeeBox.TabIndex = 31;
+            // 
+            // officeBox
+            // 
+            this.officeBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.officeBox.FormattingEnabled = true;
+            this.officeBox.Location = new System.Drawing.Point(226, 220);
+            this.officeBox.Name = "officeBox";
+            this.officeBox.Size = new System.Drawing.Size(273, 21);
+            this.officeBox.TabIndex = 32;
+            // 
+            // serviceBox
+            // 
+            this.serviceBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.serviceBox.FormattingEnabled = true;
+            this.serviceBox.Location = new System.Drawing.Point(226, 247);
+            this.serviceBox.Name = "serviceBox";
+            this.serviceBox.Size = new System.Drawing.Size(273, 21);
+            this.serviceBox.TabIndex = 33;
             // 
             // OrderEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.serviceBox);
+            this.Controls.Add(this.officeBox);
+            this.Controls.Add(this.employeeBox);
+            this.Controls.Add(this.delete);
+            this.Controls.Add(this.add);
+            this.Controls.Add(this.save);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.textBox10);
-            this.Controls.Add(this.textBox9);
-            this.Controls.Add(this.textBox8);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.articleComponents);
+            this.Controls.Add(this.articleColor);
+            this.Controls.Add(this.articleName);
+            this.Controls.Add(this.deleteArticle);
+            this.Controls.Add(this.saveArticle);
+            this.Controls.Add(this.addArticle);
             this.Controls.Add(this.articlesList);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.textBox7);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBox6);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.orderDate);
+            this.Controls.Add(this.isExecutedCheckBox);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.phone);
+            this.Controls.Add(this.patr);
+            this.Controls.Add(this.last);
+            this.Controls.Add(this.name);
             this.Name = "OrderEditor";
             this.Size = new System.Drawing.Size(502, 442);
             this.ResumeLayout(false);
@@ -365,36 +375,36 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox name;
+        private System.Windows.Forms.TextBox last;
+        private System.Windows.Forms.TextBox patr;
+        private System.Windows.Forms.TextBox phone;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.CheckBox isExecutedCheckBox;
+        private System.Windows.Forms.DateTimePicker orderDate;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ListBox articlesList;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.Button addArticle;
+        private System.Windows.Forms.Button saveArticle;
+        private System.Windows.Forms.Button deleteArticle;
+        private System.Windows.Forms.TextBox articleName;
+        private System.Windows.Forms.TextBox articleColor;
+        private System.Windows.Forms.TextBox articleComponents;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button save;
+        private System.Windows.Forms.Button add;
+        private System.Windows.Forms.Button delete;
+        private System.Windows.Forms.ComboBox employeeBox;
+        private System.Windows.Forms.ComboBox officeBox;
+        private System.Windows.Forms.ComboBox serviceBox;
     }
 }

@@ -40,8 +40,8 @@
             this.patr = new System.Windows.Forms.TextBox();
             this.number = new System.Windows.Forms.TextBox();
             this.salary = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.hireDate = new System.Windows.Forms.DateTimePicker();
+            this.dob = new System.Windows.Forms.DateTimePicker();
             this.saveButton = new System.Windows.Forms.Button();
             this.deleteButton = new System.Windows.Forms.Button();
             this.errorLabel = new System.Windows.Forms.Label();
@@ -146,19 +146,19 @@
             this.salary.Size = new System.Drawing.Size(186, 20);
             this.salary.TabIndex = 12;
             // 
-            // dateTimePicker1
+            // hireDate
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(187, 145);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 13;
+            this.hireDate.Location = new System.Drawing.Point(187, 145);
+            this.hireDate.Name = "hireDate";
+            this.hireDate.Size = new System.Drawing.Size(200, 20);
+            this.hireDate.TabIndex = 13;
             // 
-            // dateTimePicker2
+            // dob
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(187, 168);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker2.TabIndex = 14;
+            this.dob.Location = new System.Drawing.Point(187, 168);
+            this.dob.Name = "dob";
+            this.dob.Size = new System.Drawing.Size(200, 20);
+            this.dob.TabIndex = 14;
             // 
             // saveButton
             // 
@@ -196,6 +196,7 @@
             this.button1.TabIndex = 18;
             this.button1.Text = "Добавить";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // EmployeeEditor
             // 
@@ -205,8 +206,8 @@
             this.Controls.Add(this.errorLabel);
             this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.saveButton);
-            this.Controls.Add(this.dateTimePicker2);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dob);
+            this.Controls.Add(this.hireDate);
             this.Controls.Add(this.salary);
             this.Controls.Add(this.number);
             this.Controls.Add(this.patr);
@@ -240,8 +241,8 @@
         private System.Windows.Forms.TextBox patr;
         private System.Windows.Forms.TextBox number;
         private System.Windows.Forms.TextBox salary;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker hireDate;
+        private System.Windows.Forms.DateTimePicker dob;
         private System.Windows.Forms.Button saveButton;
         private System.Windows.Forms.Button deleteButton;
         private System.Windows.Forms.Label errorLabel;

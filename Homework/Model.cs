@@ -74,6 +74,11 @@ public partial class Article {
             this.componentsField = value;
         }
     }
+
+    public override string ToString()
+    {
+        return name;
+    }
 }
 
 /// <remarks/>
@@ -148,6 +153,11 @@ public partial class Service {
             this.priceFieldSpecified = value;
         }
     }
+
+    public override string ToString()
+    {
+        return "[" + id + "] " + name;
+    }
 }
 
 /// <remarks/>
@@ -208,6 +218,11 @@ public partial class Office {
         set {
             this.addressField = value;
         }
+    }
+
+    public override string ToString()
+    {
+        return "[" + id + "] " + name; 
     }
 }
 
@@ -373,6 +388,11 @@ public partial class Employee {
         set {
             this.salaryFieldSpecified = value;
         }
+    }
+
+    public override string ToString()
+    {
+        return "[" + id + "] " + lastName + ", " + firstName; 
     }
 }
 
@@ -561,6 +581,11 @@ public partial class Order {
         set {
             this.articleListField = value;
         }
+    }
+
+    public override string ToString()
+    {
+        return "[" + id + "] " + clientLastName + ", " + clientFirstName + "/" + orderDate;
     }
 }
 

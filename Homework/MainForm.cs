@@ -20,14 +20,14 @@ namespace Homework
         private const string SRVS_STRING = "services";
         private const string OFFS_STRING = "offices";
 
-        private Control EMPL_COMP;
-        private Control ORDS_COMP;
-        private Control SRVS_COMP;
-        private Control OFFS_COMP;
+        private EmployeeEditor EMPL_COMP;
+        private OrderEditor ORDS_COMP;
+        private ServiceEditor SRVS_COMP;
+        private OfficeEditor OFFS_COMP;
 
         private ExportedDatabase exDB;
 
-        public InnerDatabase innerDB { get; set; }
+        public InnerDatabase db { get; set; }
 
         public MainForm()
         {
@@ -46,8 +46,11 @@ namespace Homework
             if (openDB.ShowDialog().Equals(DialogResult.OK))
             {
                 exDB = deserialize(openDB.FileName);
-                innerDB = new InnerDatabase(exDB);
+                db = new InnerDatabase(exDB);
             }
+            comboBox1.SelectedIndex = 0;
+            comboBox1.Enabled = true;
+            refreshEntities(db);
             // now the db is exported, we can do what we want
         }
 
@@ -57,15 +60,40 @@ namespace Homework
             xRoot.ElementName = "exportedDatabase";
             xRoot.IsNullable = true;
             XmlSerializer serializer = new XmlSerializer(typeof(ExportedDatabase), xRoot);
+            ExportedDatabase result;
             using (XmlReader reader = XmlReader.Create(filename))
             {
-                return (ExportedDatabase)serializer.Deserialize(reader);
+                result = (ExportedDatabase)serializer.Deserialize(reader);
             }
+            richTextBox1.BackColor = Color.LightGreen;
+            richTextBox1.Text = "База данных импортирована успешно!";
+            return result;
+        }
+
+        private void serialize(string filename)
+        {
+            ExportedDatabase outDatabase = db.toExported();
+            XmlRootAttribute xRoot = new XmlRootAttribute();
+            xRoot.ElementName = "exportedDatabase";
+            xRoot.IsNullable = true;
+
+            XmlSerializerNamespaces ns = new XmlSerializerNamespaces();
+            ns.Add("", "");
+            XmlWriterSettings settings = new XmlWriterSettings();
+            //settings.OmitXmlDeclaration = true;
+
+            XmlSerializer serializer = new XmlSerializer(typeof(ExportedDatabase), xRoot);
+            using (XmlWriter writer = XmlWriter.Create(filename, settings))
+            {
+                serializer.Serialize(writer, outDatabase, ns);
+            }
+            richTextBox1.BackColor = Color.LightGreen;
+            richTextBox1.Text = "База данных экспортирована успешно!";
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (exDB == null)
+            if (db == null)
             {
                 richTextBox1.ForeColor = Color.Red;
                 richTextBox1.Text = "DB not loaded!";
@@ -74,32 +102,94 @@ namespace Homework
             string selected = (string)comboBox1.SelectedItem;
             panel1.Controls.Clear();
             listBox1.Items.Clear();
-            listBox1.DisplayMember = "id";
             switch (selected)
             {
                 case EMPL_STRING:
+                    EMPL_COMP.refresh();
                     panel1.Controls.Add(EMPL_COMP);
-                    listBox1.Items.AddRange(
-                        new ListBox.ObjectCollection(listBox1, exDB.employees));
                     break;
                 case SRVS_STRING:
+                    SRVS_COMP.refresh();
                     panel1.Controls.Add(SRVS_COMP);
-                    listBox1.Items.AddRange(
-                        new ListBox.ObjectCollection(listBox1, exDB.services));
                     break;
                 case ORDS_STRING:
+                    ORDS_COMP.refresh();
                     panel1.Controls.Add(ORDS_COMP);
-                    listBox1.Items.AddRange(
-                        new ListBox.ObjectCollection(listBox1, exDB.orders));
                     break;
                 case OFFS_STRING:
+                    OFFS_COMP.refresh();
                     panel1.Controls.Add(OFFS_COMP);
-                    listBox1.Items.AddRange(
-                        new ListBox.ObjectCollection(listBox1, exDB.offices));
                     break;
                 default:
                     throw new Exception("unknown case");
                     // never?
+            }
+            refreshEntities(db);
+        }
+
+        public void logWarning(string message)
+        {
+            // todo implement
+        }
+
+        public void refreshEntities(InnerDatabase db)
+        {
+            string selected = (string)comboBox1.SelectedItem;
+            listBox1.Items.Clear();
+            switch (selected)
+            {
+                case EMPL_STRING:
+                    listBox1.Items.AddRange(db.Employees.ToArray());
+                    break;
+                case SRVS_STRING:
+                    listBox1.Items.AddRange(db.Services.ToArray());
+                    break;
+                case ORDS_STRING:
+                    listBox1.Items.AddRange(db.Orders.ToArray());
+                    break;
+                case OFFS_STRING:
+                    listBox1.Items.AddRange(db.Offices.ToArray());
+                    break;
+                default:
+                    throw new Exception("unknown case");
+            }
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string selected = (string)comboBox1.SelectedItem;
+            int idx = listBox1.SelectedIndex;
+            if (idx < 0)
+            {
+                return;
+            }
+            switch (selected)
+            {
+                case EMPL_STRING:
+                    EMPL_COMP.refresh();
+                    EMPL_COMP.setCurrent(idx);
+                    break;
+                case SRVS_STRING:
+                    SRVS_COMP.refresh();
+                    SRVS_COMP.setCurrent(idx);
+                    break;
+                case ORDS_STRING:
+                    ORDS_COMP.refresh();
+                    ORDS_COMP.setCurrent(idx);
+                    break;
+                case OFFS_STRING:
+                    OFFS_COMP.refresh();
+                    OFFS_COMP.setCurrent(idx);
+                    break;
+                default:
+                    throw new Exception("unknown case");
+            }
+        }
+
+        private void saveDB_Click(object sender, EventArgs e)
+        {
+            if (saveFileDialog1.ShowDialog().Equals(DialogResult.OK)) {
+                serialize(saveFileDialog1.FileName);
             }
         }
     }
